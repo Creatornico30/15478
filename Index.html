@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NovaObra | Obra civil y acabados modernos</title>
+    <title>NovaObra Studio | Drywall, obra blanca y remodelación comercial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #070b14;
-        --surface: #0f1629;
-        --surface-2: #151f36;
-        --text: #eaf0ff;
-        --muted: #adb8d9;
-        --primary: #60a5fa;
-        --secondary: #34d399;
-        --accent: #f59e0b;
-        --danger: #fb7185;
-        --card: rgba(255, 255, 255, 0.05);
-        --border: rgba(255, 255, 255, 0.12);
+        --bg: #070b12;
+        --bg-soft: #0b1322;
+        --surface: rgba(255, 255, 255, 0.04);
+        --surface-2: #101a2e;
+        --txt: #edf2ff;
+        --muted: #a8b4d7;
+        --line: rgba(255, 255, 255, 0.14);
+        --brand: #5ea7ff;
+        --brand-2: #36d6a8;
+        --accent: #ffbe4d;
+        --danger: #ff6b8a;
+        --shadow: 0 12px 40px rgba(3, 9, 22, 0.45);
       }
 
       * {
@@ -32,216 +33,306 @@
       html,
       body {
         margin: 0;
-        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        background: radial-gradient(circle at top right, #132144 0%, var(--bg) 45%), var(--bg);
-        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        color: var(--txt);
+        background: radial-gradient(circle at 90% 0%, #16294d 0%, #0d1730 30%, var(--bg) 64%);
         scroll-behavior: smooth;
       }
 
       .container {
-        width: min(1120px, 92vw);
+        width: min(1160px, 92vw);
         margin: 0 auto;
+      }
+
+      .section {
+        padding: 4.5rem 0;
+      }
+
+      .section-head {
+        margin-bottom: 1.2rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border: 1px solid var(--line);
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: Manrope, Inter, sans-serif;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.95rem);
+        line-height: 1.02;
+        margin-top: 0.85rem;
+      }
+
+      h2 {
+        font-size: clamp(1.6rem, 3vw, 2.45rem);
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .muted {
+        color: var(--muted);
       }
 
       .nav {
         position: sticky;
         top: 0;
-        z-index: 30;
-        backdrop-filter: blur(10px);
-        background: rgba(7, 11, 20, 0.72);
-        border-bottom: 1px solid var(--border);
+        z-index: 100;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(6, 10, 18, 0.72);
       }
 
-      .nav-content {
-        min-height: 74px;
+      .nav-inner {
+        min-height: 76px;
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        gap: 1rem;
-      }
-
-      .brand {
-        font-weight: 900;
-        letter-spacing: 0.4px;
-        font-size: 1.2rem;
-      }
-
-      .brand span {
-        color: var(--secondary);
-      }
-
-      .menu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
         align-items: center;
         gap: 1rem;
+      }
+
+      .logo {
+        font-family: Manrope, sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.2px;
+        font-weight: 800;
+      }
+
+      .logo b {
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      .links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
         flex-wrap: wrap;
       }
 
-      .menu a {
-        color: var(--text);
+      .links a {
         text-decoration: none;
-        font-size: 0.94rem;
-        opacity: 0.92;
+        color: var(--txt);
+        opacity: 0.9;
+        font-size: 0.93rem;
       }
 
-      .menu a:hover {
-        color: var(--primary);
+      .links a:hover {
+        color: var(--brand);
       }
 
       .btn {
         border: 0;
         border-radius: 999px;
-        padding: 0.82rem 1.15rem;
-        font-weight: 700;
-        text-decoration: none;
+        padding: 0.78rem 1.12rem;
         display: inline-flex;
         align-items: center;
-        gap: 0.45rem;
+        justify-content: center;
+        gap: 0.4rem;
         cursor: pointer;
+        text-decoration: none;
+        font-weight: 700;
       }
 
       .btn-primary {
-        background: linear-gradient(90deg, var(--primary), #3b82f6);
-        color: #081124;
+        background: linear-gradient(90deg, var(--brand), #79b7ff);
+        color: #071224;
       }
 
       .btn-secondary {
-        background: linear-gradient(90deg, var(--secondary), #10b981);
-        color: #052018;
+        background: linear-gradient(90deg, var(--brand-2), #67e7c2);
+        color: #052016;
       }
 
       .hero {
-        padding: 5.8rem 0 4rem;
+        padding: 5.4rem 0 3.5rem;
       }
 
       .hero-grid {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
-        gap: 2rem;
+        gap: 1.2rem;
         align-items: center;
       }
 
-      .badge {
-        display: inline-block;
-        padding: 0.35rem 0.72rem;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        font-size: 0.84rem;
-        color: var(--muted);
+      .hero p {
+        margin-top: 1rem;
+        max-width: 62ch;
       }
 
-      h1 {
-        margin: 0.95rem 0 1rem;
-        font-size: clamp(2rem, 5vw, 3.8rem);
-        line-height: 1.05;
+      .hero-actions {
+        margin-top: 1.35rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
       }
 
-      .lead {
-        color: var(--muted);
-        margin-bottom: 1.35rem;
-        max-width: 58ch;
-      }
-
-      .hero-card {
-        border: 1px solid var(--border);
+      .glass {
+        background: linear-gradient(165deg, rgba(94, 167, 255, 0.18), rgba(54, 214, 168, 0.12));
+        border: 1px solid var(--line);
         border-radius: 24px;
         padding: 1rem;
-        background: linear-gradient(160deg, rgba(96, 165, 250, 0.15), rgba(52, 211, 153, 0.09));
+        box-shadow: var(--shadow);
       }
 
-      .hero-card img {
+      .hero-image {
         width: 100%;
-        border-radius: 16px;
-        min-height: 360px;
+        min-height: 400px;
         object-fit: cover;
+        border-radius: 18px;
       }
 
-      section {
-        padding: 3.5rem 0;
-      }
-
-      h2 {
-        margin: 0 0 0.7rem;
-        font-size: clamp(1.45rem, 3vw, 2.2rem);
-      }
-
-      .section-text {
-        color: var(--muted);
-        margin-bottom: 1.4rem;
-      }
-
-      .grid {
+      .stats {
+        margin-top: 1rem;
         display: grid;
-        gap: 1rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
       }
 
-      .grid-3 {
+      .stats article {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.78rem;
+      }
+
+      .stats strong {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .cards {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .cards-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .card {
-        background: var(--card);
-        border: 1px solid var(--border);
+        background: var(--surface);
+        border: 1px solid var(--line);
         border-radius: 18px;
         padding: 1rem;
+        transition: transform 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
       }
 
       .card h3 {
-        margin-top: 0;
         margin-bottom: 0.5rem;
+        font-size: 1.08rem;
       }
 
       .card p {
         color: var(--muted);
-        margin: 0;
+        line-height: 1.5;
+      }
+
+      .icon {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 10px;
+        margin-bottom: 0.7rem;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(140deg, rgba(94, 167, 255, 0.28), rgba(54, 214, 168, 0.2));
+        border: 1px solid var(--line);
       }
 
       .promo {
-        border: 1px solid rgba(245, 158, 11, 0.4);
-        background: linear-gradient(160deg, rgba(245, 158, 11, 0.22), rgba(251, 113, 133, 0.08));
+        background: linear-gradient(160deg, rgba(255, 190, 77, 0.24), rgba(255, 107, 138, 0.1));
+        border-color: rgba(255, 190, 77, 0.45);
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .process article {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.9rem;
+      }
+
+      .num {
+        display: inline-flex;
+        width: 1.8rem;
+        height: 1.8rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        background: rgba(94, 167, 255, 0.25);
+        margin-bottom: 0.5rem;
       }
 
       .gallery {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0.9rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .gallery figure {
         margin: 0;
+        border: 1px solid var(--line);
         border-radius: 18px;
         overflow: hidden;
-        border: 1px solid var(--border);
-        background: #081022;
+        background: #0b1323;
       }
 
       .gallery img {
         width: 100%;
-        aspect-ratio: 1 / 0.74;
-        object-fit: cover;
         display: block;
+        aspect-ratio: 1/0.72;
+        object-fit: cover;
       }
 
       .gallery figcaption {
-        padding: 0.75rem;
-        font-size: 0.9rem;
+        padding: 0.82rem;
         color: var(--muted);
+        font-size: 0.9rem;
       }
 
-      .quote-wrap {
+      .quote {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr 0.95fr;
+        gap: 0.9rem;
+      }
+
+      .form,
+      .side {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 1rem;
+        background: var(--surface);
       }
 
       .form {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 1rem;
         display: grid;
         gap: 0.85rem;
       }
@@ -249,7 +340,7 @@
       label {
         display: grid;
         gap: 0.35rem;
-        font-size: 0.93rem;
+        font-size: 0.92rem;
       }
 
       input,
@@ -257,10 +348,10 @@
       textarea {
         width: 100%;
         border-radius: 12px;
-        border: 1px solid var(--border);
+        border: 1px solid var(--line);
         background: var(--surface-2);
-        color: var(--text);
         padding: 0.74rem;
+        color: var(--txt);
         font: inherit;
       }
 
@@ -268,78 +359,70 @@
         resize: vertical;
       }
 
-      .info-box {
-        border-radius: 18px;
-        border: 1px solid var(--border);
-        background: var(--surface);
-        padding: 1rem;
-      }
-
-      .kpi {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.7rem;
-        margin-top: 1rem;
-      }
-
-      .kpi article {
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        padding: 0.7rem;
-        background: rgba(255, 255, 255, 0.03);
-      }
-
-      .kpi strong {
-        display: block;
-        font-size: 1.2rem;
-      }
-
       .status {
-        min-height: 1.3rem;
+        min-height: 1.1rem;
         margin: 0;
         font-weight: 600;
       }
 
       .ok {
-        color: var(--secondary);
+        color: var(--brand-2);
       }
 
       .error {
         color: var(--danger);
       }
 
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 1.6rem 0 2rem;
+      .chips {
+        margin-top: 0.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .chip {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.82rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
         color: var(--muted);
       }
 
-      @media (max-width: 980px) {
+      footer {
+        margin-top: 2.5rem;
+        border-top: 1px solid var(--line);
+        padding: 1.5rem 0 2rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 1024px) {
         .hero-grid,
-        .quote-wrap,
-        .grid-3,
+        .cards-3,
+        .process,
         .gallery,
-        .kpi {
+        .quote,
+        .stats {
           grid-template-columns: 1fr;
         }
 
-        .nav-content {
-          padding-block: 0.6rem;
-          align-items: flex-start;
+        .nav-inner {
+          padding-block: 0.65rem;
           flex-direction: column;
+          align-items: flex-start;
         }
       }
     </style>
   </head>
   <body>
     <nav class="nav">
-      <div class="container nav-content">
-        <div class="brand">Nova<span>Obra</span></div>
-        <ul class="menu">
+      <div class="container nav-inner">
+        <div class="logo">Nova<b>Obra</b> Studio</div>
+        <ul class="links">
           <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#promos">Promociones</a></li>
-          <li><a href="#galeria">Trabajos</a></li>
-          <li><a href="#cotizacion">Cotización</a></li>
+          <li><a href="#promociones">Promociones</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#cotizacion">Cotizar</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
@@ -348,91 +431,158 @@
     <header class="hero container" id="inicio">
       <div class="hero-grid">
         <div>
-          <span class="badge">Obra civil • Obra blanca • Acabados premium</span>
-          <h1>Remodelaciones modernas para hogar, oficina y comercio</h1>
-          <p class="lead">
-            Somos especialistas en panel yeso decorado, pintura profesional, iluminación indirecta y adecuación integral
-            de espacios. Entregamos diseño, calidad y cumplimiento.
+          <span class="eyebrow">Especialistas en obra blanca, drywall y acabados comerciales</span>
+          <h1>Diseñamos espacios que venden y enamoran</h1>
+          <p class="muted">
+            Transformamos domicilios, oficinas y locales con soluciones en panel yeso, pintura premium,
+            iluminación indirecta y remodelación integral. Tu marca y tu hogar merecen un acabado moderno
+            y profesional.
           </p>
-          <div style="display:flex; gap:.7rem; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="#cotizacion">Solicitar cotización</a>
-            <a class="btn btn-secondary" href="https://wa.me/573001234567" target="_blank" rel="noopener">WhatsApp</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cotizacion">Cotización en 2 minutos</a>
+            <a class="btn btn-secondary" href="https://wa.me/573001234567" target="_blank" rel="noopener">Asesor por WhatsApp</a>
+          </div>
+          <div class="stats">
+            <article><strong>+640</strong><span class="muted">proyectos ejecutados</span></article>
+            <article><strong>97%</strong><span class="muted">clientes recurrentes</span></article>
+            <article><strong>10+ años</strong><span class="muted">en obra civil y acabados</span></article>
           </div>
         </div>
-        <div class="hero-card">
+
+        <div class="glass">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
-            alt="Equipo realizando acabados modernos en obra"
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1300&q=80"
+            alt="Equipo profesional ejecutando acabados de obra blanca"
           />
         </div>
       </div>
     </header>
 
     <main class="container">
-      <section id="empresa">
-        <h2>Información básica de la empresa</h2>
-        <p class="section-text">
-          En <strong>NovaObra</strong> tenemos más de 10 años ejecutando proyectos de construcción y acabados modernos.
-          Atendemos domicilios, oficinas y locales comerciales con personal técnico certificado.
-        </p>
-        <div class="kpi">
-          <article><strong>+500</strong><span>proyectos terminados</span></article>
-          <article><strong>+10 años</strong><span>de experiencia real</span></article>
-          <article><strong>24/7</strong><span>asesoría por WhatsApp</span></article>
+      <section class="section" id="servicios">
+        <div class="section-head">
+          <span class="eyebrow">Servicios profesionales</span>
+          <h2>Todo en un solo equipo para sistemas livianos y obra blanca</h2>
+        </div>
+        <div class="cards cards-3">
+          <article class="card">
+            <div class="icon">🏗️</div>
+            <h3>Obra civil y adecuaciones</h3>
+            <p>Demoliciones controladas, ampliaciones, nivelación y mejoras estructurales para renovación segura.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧱</div>
+            <h3>Obra blanca de alta calidad</h3>
+            <p>Estuco, masilla, enchapes y acabados finos para interiores con estética limpia y elegante.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🛠️</div>
+            <h3>Drywall y panel yeso decorado</h3>
+            <p>Cielorrasos, nichos, divisiones y diseños modernos que optimizan el espacio y la acústica.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎨</div>
+            <h3>Pintura y texturizados premium</h3>
+            <p>Pintura interior/exterior con preparación profesional de superficie para mayor durabilidad.</p>
+          </article>
+          <article class="card">
+            <div class="icon">💡</div>
+            <h3>Iluminación indirecta</h3>
+            <p>Diseño de ambientes con tiras LED y perfiles para un resultado moderno, cálido y funcional.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧭</div>
+            <h3>Remodelación comercial</h3>
+            <p>Locales y oficinas pensados para vender más: circulación eficiente, branding y presencia visual.</p>
+          </article>
         </div>
       </section>
 
-      <section id="servicios">
-        <h2>Servicios</h2>
-        <p class="section-text">Todo lo que necesitas para renovar tu espacio con estilo y garantía.</p>
-        <div class="grid grid-3">
-          <article class="card"><h3>Obra civil</h3><p>Estructura, muros, ampliaciones y adecuaciones técnicas seguras.</p></article>
-          <article class="card"><h3>Acabados de obra blanca</h3><p>Estuco, enchapes, pintura fina y terminaciones de alto nivel.</p></article>
-          <article class="card"><h3>Panel yeso decorado</h3><p>Cielorrasos, divisiones y detalles decorativos modernos.</p></article>
-          <article class="card"><h3>Pintura profesional</h3><p>Interiores y exteriores con productos durables y excelente estética.</p></article>
-          <article class="card"><h3>Remodelación de espacios</h3><p>Rediseño de cocinas, salas, oficinas y puntos de venta comerciales.</p></article>
-          <article class="card"><h3>Iluminación indirecta</h3><p>Ambientes elegantes con tiras LED y puntos de luz estratégicos.</p></article>
+      <section class="section" id="promociones">
+        <div class="section-head">
+          <span class="eyebrow">Campañas del mes</span>
+          <h2>Promociones con enfoque comercial y residencial</h2>
+        </div>
+        <div class="cards cards-3">
+          <article class="card promo">
+            <h3>Pack Hogar Moderno</h3>
+            <p>15% OFF en combinación pintura + iluminación indirecta para salas, cocinas y habitaciones.</p>
+          </article>
+          <article class="card promo">
+            <h3>Local que Impacta</h3>
+            <p>Diseño de fachada interior + drywal decorativo + acabados de exhibición con descuento especial.</p>
+          </article>
+          <article class="card promo">
+            <h3>Oficina Productiva</h3>
+            <p>Divisiones en panel yeso, insonorización básica y pintura corporativa con entrega prioritaria.</p>
+          </article>
         </div>
       </section>
 
-      <section id="promos">
-        <h2>Promociones</h2>
-        <p class="section-text">Aprovecha nuestras campañas del mes.</p>
-        <div class="grid grid-3">
-          <article class="card promo"><h3>Combo Hogar</h3><p>15% OFF en pintura + iluminación indirecta para vivienda.</p></article>
-          <article class="card promo"><h3>Oficina Pro</h3><p>Diseño en panel yeso + acabado obra blanca con precio especial.</p></article>
-          <article class="card promo"><h3>Local Comercial</h3><p>Remodelación express con cronograma prioritario de entrega.</p></article>
+      <section class="section" id="proceso">
+        <div class="section-head">
+          <span class="eyebrow">Metodología de trabajo</span>
+          <h2>Proceso claro para entregas sin estrés</h2>
+        </div>
+        <div class="process">
+          <article>
+            <span class="num">1</span>
+            <h3>Diagnóstico</h3>
+            <p class="muted">Visitamos el espacio o revisamos planos/fotos para entender necesidades reales.</p>
+          </article>
+          <article>
+            <span class="num">2</span>
+            <h3>Diseño y presupuesto</h3>
+            <p class="muted">Propuesta visual + cotización detallada por etapas y materiales.</p>
+          </article>
+          <article>
+            <span class="num">3</span>
+            <h3>Ejecución técnica</h3>
+            <p class="muted">Equipo experto en sistemas livianos, obra blanca y acabados modernos.</p>
+          </article>
+          <article>
+            <span class="num">4</span>
+            <h3>Entrega y garantía</h3>
+            <p class="muted">Revisión final contigo y acompañamiento posentrega para total tranquilidad.</p>
+          </article>
         </div>
       </section>
 
-      <section id="galeria">
-        <h2>Algunos trabajos realizados</h2>
+      <section class="section" id="proyectos">
+        <div class="section-head">
+          <span class="eyebrow">Galería</span>
+          <h2>Resultados que elevan el valor del espacio</h2>
+        </div>
         <div class="gallery">
           <figure>
-            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Sala con iluminación indirecta" />
-            <figcaption>Sala residencial con iluminación indirecta y acabados premium.</figcaption>
+            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Sala moderna con cielo raso en drywall" />
+            <figcaption>Sala residencial con cielo raso en drywall + iluminación indirecta.</figcaption>
           </figure>
           <figure>
-            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Cocina remodelada" />
-            <figcaption>Remodelación de cocina integral con concepto moderno.</figcaption>
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Cocina remodelada con acabados de obra blanca" />
+            <figcaption>Cocina integral renovada con acabados finos de obra blanca.</figcaption>
           </figure>
           <figure>
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Oficina con panel yeso" />
-            <figcaption>Adecuación corporativa con divisiones en panel yeso.</figcaption>
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Oficina comercial con divisiones en panel yeso" />
+            <figcaption>Oficina corporativa con divisiones funcionales en panel yeso.</figcaption>
           </figure>
         </div>
       </section>
 
-      <section id="cotizacion">
-        <h2>Cotización rápida</h2>
-        <p class="section-text">Completa el formulario y recibe asesoría personalizada.</p>
-        <div class="quote-wrap">
-          <form class="form" id="quoteForm">
+      <section class="section" id="cotizacion">
+        <div class="section-head">
+          <span class="eyebrow">Cotiza tu proyecto</span>
+          <h2>Cuéntanos tu idea y te enviamos propuesta profesional</h2>
+        </div>
+
+        <div class="quote">
+          <form id="quoteForm" class="form">
             <label>Nombre completo <input type="text" name="nombre" required /></label>
-            <label>Teléfono <input type="tel" name="telefono" required /></label>
-            <label>Correo <input type="email" name="correo" required /></label>
+            <label>Teléfono o WhatsApp <input type="tel" name="telefono" required /></label>
+            <label>Correo electrónico <input type="email" name="correo" required /></label>
             <label>
-              Tipo de espacio
+              Tipo de proyecto
               <select name="espacio" required>
                 <option value="">Selecciona una opción</option>
                 <option>Domicilio</option>
@@ -440,25 +590,31 @@
                 <option>Local comercial</option>
               </select>
             </label>
-            <label>Servicios de interés <textarea name="servicios" rows="4" placeholder="Ej: panel yeso + pintura + iluminación"></textarea></label>
-            <button class="btn btn-primary" type="submit" id="submitBtn">Enviar cotización</button>
+            <label>¿Qué necesitas? <textarea name="servicios" rows="4" placeholder="Ejemplo: drywall para sala, pintura completa e iluminación indirecta"></textarea></label>
+            <button class="btn btn-primary" id="submitBtn" type="submit">Enviar cotización</button>
             <p id="status" class="status" aria-live="polite"></p>
           </form>
 
-          <aside class="info-box" id="contacto">
-            <h3>Contacto directo</h3>
-            <p>📱 <strong>+57 300 123 4567</strong></p>
+          <aside class="side" id="contacto">
+            <h3>Atención comercial</h3>
+            <p class="muted" style="margin-top:0.5rem;">
+              Te asesoramos con enfoque técnico y comercial para que tu inversión realmente se vea y se venda mejor.
+            </p>
+            <div class="chips">
+              <span class="chip">🕒 Lunes a sábado 7:00 a.m. - 6:00 p.m.</span>
+              <span class="chip">📍 Cobertura urbana + municipios cercanos</span>
+              <span class="chip">🧾 Facturación y contratos claros</span>
+            </div>
+            <p style="margin-top:1rem;"><strong>📱 +57 300 123 4567</strong></p>
             <p>✉️ contacto@novaobra.com</p>
-            <p>📍 Cobertura en ciudad principal y municipios cercanos.</p>
-            <p>🕒 Lunes a sábado: 7:00 a.m. - 6:00 p.m.</p>
-            <a class="btn btn-secondary" href="https://wa.me/573001234567" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <a class="btn btn-secondary" style="margin-top:0.8rem;" href="https://wa.me/573001234567" target="_blank" rel="noopener">Hablar ahora por WhatsApp</a>
           </aside>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container">© <span id="year"></span> NovaObra. Todos los derechos reservados.</div>
+      <div class="container">© <span id="year"></span> NovaObra Studio — Drywall, obra blanca y remodelación moderna.</div>
     </footer>
 
     <script>
@@ -472,33 +628,36 @@
         statusEl.className = 'status ' + (ok ? 'ok' : 'error');
       }
 
+      function resetSubmit() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar cotización';
+      }
+
       form.addEventListener('submit', (event) => {
         event.preventDefault();
-
         const data = Object.fromEntries(new FormData(form).entries());
+
         submitBtn.disabled = true;
         submitBtn.textContent = 'Enviando...';
-        setStatus('Procesando tu solicitud...', true);
+        setStatus('Estamos procesando tu solicitud...', true);
 
         const fallbackSuccess = () => {
-          setStatus('¡Cotización enviada! Te responderemos pronto.', true);
+          setStatus('¡Recibido! Un asesor te contactará en breve.', true);
           form.reset();
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Enviar cotización';
+          resetSubmit();
         };
 
         if (window.google && google.script && google.script.run) {
           google.script.run
             .withSuccessHandler((res) => {
-              setStatus(`${res.message} Código: ${res.quoteId}`, true);
+              const code = res && res.quoteId ? ` Código: ${res.quoteId}` : '';
+              setStatus(`¡Solicitud enviada exitosamente!${code}`, true);
               form.reset();
-              submitBtn.disabled = false;
-              submitBtn.textContent = 'Enviar cotización';
+              resetSubmit();
             })
             .withFailureHandler((err) => {
-              setStatus(err.message || 'Ocurrió un error al enviar la cotización.', false);
-              submitBtn.disabled = false;
-              submitBtn.textContent = 'Enviar cotización';
+              setStatus(err.message || 'No fue posible enviar la cotización. Intenta de nuevo.', false);
+              resetSubmit();
             })
             .processQuote(data);
         } else {
