@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ObraNova | Obra civil y acabados modernos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="inicio">
+      <nav class="topbar">
+        <div class="logo">ObraNova</div>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#promociones">Promociones</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#cotizacion">Cotización</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <p class="tag">Obra civil • Obra blanca • Remodelación integral</p>
+        <h1>Transformamos hogares, oficinas y locales comerciales</h1>
+        <p>
+          Expertos en panel yeso decorado, acabados modernos, pintura profesional,
+          iluminación indirecta y adecuación de espacios con calidad garantizada.
+        </p>
+        <a class="btn" href="#cotizacion">Solicitar cotización</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="about section">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+          En <strong>ObraNova</strong> somos una empresa especializada en servicios de
+          obra civil y acabados de alto nivel. Contamos con personal calificado para
+          proyectos residenciales y comerciales, cuidando cada detalle desde la
+          planificación hasta la entrega final.
+        </p>
+        <div class="stats">
+          <article>
+            <h3>+10 años</h3>
+            <p>de experiencia en el sector construcción y acabados.</p>
+          </article>
+          <article>
+            <h3>+450</h3>
+            <p>proyectos ejecutados en domicilios, oficinas y comercios.</p>
+          </article>
+          <article>
+            <h3>100%</h3>
+            <p>acompañamiento y asesoría personalizada.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="services section" id="servicios">
+        <h2>Nuestros servicios</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Obra civil</h3>
+            <p>Estructuras, adecuaciones, ampliaciones y soluciones técnicas seguras.</p>
+          </article>
+          <article class="card">
+            <h3>Acabado de obra blanca</h3>
+            <p>Enchapes, estuco, pañetes finos y terminaciones impecables.</p>
+          </article>
+          <article class="card">
+            <h3>Panel yeso decorado</h3>
+            <p>Diseños modernos en cielo raso, nichos y divisiones en drywall.</p>
+          </article>
+          <article class="card">
+            <h3>Pintura y texturas</h3>
+            <p>Pintura interior/exterior con líneas limpias y materiales premium.</p>
+          </article>
+          <article class="card">
+            <h3>Remodelación de espacios</h3>
+            <p>Rediseño total para vivienda, oficina o local comercial.</p>
+          </article>
+          <article class="card">
+            <h3>Iluminación indirecta</h3>
+            <p>Ambientes elegantes y eficientes con sistemas LED decorativos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="promotions section" id="promociones">
+        <h2>Promociones vigentes</h2>
+        <div class="cards">
+          <article class="promo-card">
+            <h3>Paquete Hogar Moderno</h3>
+            <p>15% de descuento en pintura + iluminación indirecta para viviendas.</p>
+          </article>
+          <article class="promo-card">
+            <h3>Plan Oficina Productiva</h3>
+            <p>Incluye divisiones en panel yeso y acabados de obra blanca.</p>
+          </article>
+          <article class="promo-card">
+            <h3>Local Comercial Express</h3>
+            <p>Remodelación rápida con cronograma prioritario y diseño personalizado.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery section" id="galeria">
+        <h2>Galería de trabajos</h2>
+        <p class="subtitle">Algunos proyectos ejecutados por nuestro equipo.</p>
+        <div class="gallery-grid">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Sala moderna con iluminación indirecta" />
+            <figcaption>Iluminación indirecta en sala residencial.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Cocina remodelada con acabados modernos" />
+            <figcaption>Remodelación de cocina con acabados contemporáneos.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Oficina con divisiones en panel yeso" />
+            <figcaption>Adecuación de oficina con panel yeso decorado.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="quote section" id="cotizacion">
+        <h2>Solicita tu cotización</h2>
+        <form id="quoteForm" class="quote-form">
+          <label>
+            Nombre completo
+            <input type="text" name="nombre" required />
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" name="telefono" required />
+          </label>
+          <label>
+            Correo electrónico
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Tipo de espacio
+            <select name="espacio" required>
+              <option value="">Seleccione una opción</option>
+              <option>Domicilio</option>
+              <option>Oficina</option>
+              <option>Local comercial</option>
+            </select>
+          </label>
+          <label>
+            Servicios requeridos
+            <textarea name="servicios" rows="4" placeholder="Describe tu proyecto"></textarea>
+          </label>
+          <button type="submit" class="btn">Enviar solicitud</button>
+          <p id="msg" class="msg" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer id="contacto">
+      <h2>Contáctanos</h2>
+      <p>📞 +57 300 123 4567 | ✉️ contacto@obranova.com</p>
+      <p>📍 Atención en toda la ciudad y municipios cercanos.</p>
+      <p class="small">© <span id="year"></span> ObraNova. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
