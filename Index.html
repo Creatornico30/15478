@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaObra | Obra civil y acabados modernos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #070b14;
+        --surface: #0f1629;
+        --surface-2: #151f36;
+        --text: #eaf0ff;
+        --muted: #adb8d9;
+        --primary: #60a5fa;
+        --secondary: #34d399;
+        --accent: #f59e0b;
+        --danger: #fb7185;
+        --card: rgba(255, 255, 255, 0.05);
+        --border: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: radial-gradient(circle at top right, #132144 0%, var(--bg) 45%), var(--bg);
+        color: var(--text);
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        backdrop-filter: blur(10px);
+        background: rgba(7, 11, 20, 0.72);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-content {
+        min-height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-weight: 900;
+        letter-spacing: 0.4px;
+        font-size: 1.2rem;
+      }
+
+      .brand span {
+        color: var(--secondary);
+      }
+
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .menu a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.94rem;
+        opacity: 0.92;
+      }
+
+      .menu a:hover {
+        color: var(--primary);
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 0.82rem 1.15rem;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, var(--primary), #3b82f6);
+        color: #081124;
+      }
+
+      .btn-secondary {
+        background: linear-gradient(90deg, var(--secondary), #10b981);
+        color: #052018;
+      }
+
+      .hero {
+        padding: 5.8rem 0 4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.35rem 0.72rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 0.84rem;
+        color: var(--muted);
+      }
+
+      h1 {
+        margin: 0.95rem 0 1rem;
+        font-size: clamp(2rem, 5vw, 3.8rem);
+        line-height: 1.05;
+      }
+
+      .lead {
+        color: var(--muted);
+        margin-bottom: 1.35rem;
+        max-width: 58ch;
+      }
+
+      .hero-card {
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 1rem;
+        background: linear-gradient(160deg, rgba(96, 165, 250, 0.15), rgba(52, 211, 153, 0.09));
+      }
+
+      .hero-card img {
+        width: 100%;
+        border-radius: 16px;
+        min-height: 360px;
+        object-fit: cover;
+      }
+
+      section {
+        padding: 3.5rem 0;
+      }
+
+      h2 {
+        margin: 0 0 0.7rem;
+        font-size: clamp(1.45rem, 3vw, 2.2rem);
+      }
+
+      .section-text {
+        color: var(--muted);
+        margin-bottom: 1.4rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 1rem;
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .promo {
+        border: 1px solid rgba(245, 158, 11, 0.4);
+        background: linear-gradient(160deg, rgba(245, 158, 11, 0.22), rgba(251, 113, 133, 0.08));
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .gallery figure {
+        margin: 0;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: #081022;
+      }
+
+      .gallery img {
+        width: 100%;
+        aspect-ratio: 1 / 0.74;
+        object-fit: cover;
+        display: block;
+      }
+
+      .gallery figcaption {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .quote-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 1rem;
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      label {
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.93rem;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+        color: var(--text);
+        padding: 0.74rem;
+        font: inherit;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      .info-box {
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 1rem;
+      }
+
+      .kpi {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-top: 1rem;
+      }
+
+      .kpi article {
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        padding: 0.7rem;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .kpi strong {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .status {
+        min-height: 1.3rem;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .ok {
+        color: var(--secondary);
+      }
+
+      .error {
+        color: var(--danger);
+      }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 1.6rem 0 2rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .quote-wrap,
+        .grid-3,
+        .gallery,
+        .kpi {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-content {
+          padding-block: 0.6rem;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container nav-content">
+        <div class="brand">Nova<span>Obra</span></div>
+        <ul class="menu">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#promos">Promociones</a></li>
+          <li><a href="#galeria">Trabajos</a></li>
+          <li><a href="#cotizacion">Cotización</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero container" id="inicio">
+      <div class="hero-grid">
+        <div>
+          <span class="badge">Obra civil • Obra blanca • Acabados premium</span>
+          <h1>Remodelaciones modernas para hogar, oficina y comercio</h1>
+          <p class="lead">
+            Somos especialistas en panel yeso decorado, pintura profesional, iluminación indirecta y adecuación integral
+            de espacios. Entregamos diseño, calidad y cumplimiento.
+          </p>
+          <div style="display:flex; gap:.7rem; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="#cotizacion">Solicitar cotización</a>
+            <a class="btn btn-secondary" href="https://wa.me/573001234567" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+            alt="Equipo realizando acabados modernos en obra"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="empresa">
+        <h2>Información básica de la empresa</h2>
+        <p class="section-text">
+          En <strong>NovaObra</strong> tenemos más de 10 años ejecutando proyectos de construcción y acabados modernos.
+          Atendemos domicilios, oficinas y locales comerciales con personal técnico certificado.
+        </p>
+        <div class="kpi">
+          <article><strong>+500</strong><span>proyectos terminados</span></article>
+          <article><strong>+10 años</strong><span>de experiencia real</span></article>
+          <article><strong>24/7</strong><span>asesoría por WhatsApp</span></article>
+        </div>
+      </section>
+
+      <section id="servicios">
+        <h2>Servicios</h2>
+        <p class="section-text">Todo lo que necesitas para renovar tu espacio con estilo y garantía.</p>
+        <div class="grid grid-3">
+          <article class="card"><h3>Obra civil</h3><p>Estructura, muros, ampliaciones y adecuaciones técnicas seguras.</p></article>
+          <article class="card"><h3>Acabados de obra blanca</h3><p>Estuco, enchapes, pintura fina y terminaciones de alto nivel.</p></article>
+          <article class="card"><h3>Panel yeso decorado</h3><p>Cielorrasos, divisiones y detalles decorativos modernos.</p></article>
+          <article class="card"><h3>Pintura profesional</h3><p>Interiores y exteriores con productos durables y excelente estética.</p></article>
+          <article class="card"><h3>Remodelación de espacios</h3><p>Rediseño de cocinas, salas, oficinas y puntos de venta comerciales.</p></article>
+          <article class="card"><h3>Iluminación indirecta</h3><p>Ambientes elegantes con tiras LED y puntos de luz estratégicos.</p></article>
+        </div>
+      </section>
+
+      <section id="promos">
+        <h2>Promociones</h2>
+        <p class="section-text">Aprovecha nuestras campañas del mes.</p>
+        <div class="grid grid-3">
+          <article class="card promo"><h3>Combo Hogar</h3><p>15% OFF en pintura + iluminación indirecta para vivienda.</p></article>
+          <article class="card promo"><h3>Oficina Pro</h3><p>Diseño en panel yeso + acabado obra blanca con precio especial.</p></article>
+          <article class="card promo"><h3>Local Comercial</h3><p>Remodelación express con cronograma prioritario de entrega.</p></article>
+        </div>
+      </section>
+
+      <section id="galeria">
+        <h2>Algunos trabajos realizados</h2>
+        <div class="gallery">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Sala con iluminación indirecta" />
+            <figcaption>Sala residencial con iluminación indirecta y acabados premium.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Cocina remodelada" />
+            <figcaption>Remodelación de cocina integral con concepto moderno.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Oficina con panel yeso" />
+            <figcaption>Adecuación corporativa con divisiones en panel yeso.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="cotizacion">
+        <h2>Cotización rápida</h2>
+        <p class="section-text">Completa el formulario y recibe asesoría personalizada.</p>
+        <div class="quote-wrap">
+          <form class="form" id="quoteForm">
+            <label>Nombre completo <input type="text" name="nombre" required /></label>
+            <label>Teléfono <input type="tel" name="telefono" required /></label>
+            <label>Correo <input type="email" name="correo" required /></label>
+            <label>
+              Tipo de espacio
+              <select name="espacio" required>
+                <option value="">Selecciona una opción</option>
+                <option>Domicilio</option>
+                <option>Oficina</option>
+                <option>Local comercial</option>
+              </select>
+            </label>
+            <label>Servicios de interés <textarea name="servicios" rows="4" placeholder="Ej: panel yeso + pintura + iluminación"></textarea></label>
+            <button class="btn btn-primary" type="submit" id="submitBtn">Enviar cotización</button>
+            <p id="status" class="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="info-box" id="contacto">
+            <h3>Contacto directo</h3>
+            <p>📱 <strong>+57 300 123 4567</strong></p>
+            <p>✉️ contacto@novaobra.com</p>
+            <p>📍 Cobertura en ciudad principal y municipios cercanos.</p>
+            <p>🕒 Lunes a sábado: 7:00 a.m. - 6:00 p.m.</p>
+            <a class="btn btn-secondary" href="https://wa.me/573001234567" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© <span id="year"></span> NovaObra. Todos los derechos reservados.</div>
+    </footer>
+
+    <script>
+      const form = document.getElementById('quoteForm');
+      const statusEl = document.getElementById('status');
+      const submitBtn = document.getElementById('submitBtn');
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      function setStatus(message, ok = true) {
+        statusEl.textContent = message;
+        statusEl.className = 'status ' + (ok ? 'ok' : 'error');
+      }
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const data = Object.fromEntries(new FormData(form).entries());
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+        setStatus('Procesando tu solicitud...', true);
+
+        const fallbackSuccess = () => {
+          setStatus('¡Cotización enviada! Te responderemos pronto.', true);
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar cotización';
+        };
+
+        if (window.google && google.script && google.script.run) {
+          google.script.run
+            .withSuccessHandler((res) => {
+              setStatus(`${res.message} Código: ${res.quoteId}`, true);
+              form.reset();
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Enviar cotización';
+            })
+            .withFailureHandler((err) => {
+              setStatus(err.message || 'Ocurrió un error al enviar la cotización.', false);
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Enviar cotización';
+            })
+            .processQuote(data);
+        } else {
+          setTimeout(fallbackSuccess, 700);
+        }
+      });
+    </script>
+  </body>
+</html>
